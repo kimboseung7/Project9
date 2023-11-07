@@ -1,4 +1,5 @@
 package abstractex.quiz;
+
 /*
  아래
 그림은 자동차 , 아반떼 , 소나타 클래스의 상속관계를 표현한 것입니다
@@ -15,29 +16,35 @@ public class qz1 {
 		sonata.drive();
 		sonata.stop();
 		sonata.turnOff();
-		
+		sonata.showInfo();
+		//부모타입으로 설정해도 참조변수 4개 사용가능
 		Avante avante = new Avante();
 		avante.start();
 		avante.drive();
 		avante.stop();
 		avante.turnOff();
-
+		
 	}
 
 }
-abstract class Car{
+
+abstract class Car {
 	public abstract void start();
+
 	public abstract void drive();
+
 	public abstract void stop();
+
 	public abstract void turnOff();
 
 }
-class Sonata extends Car{
+
+class Sonata extends Car {
 
 	@Override
 	public void start() {
 		System.out.println("Sonata 시동을 켭니다");
-		
+
 	}
 
 	@Override
@@ -50,7 +57,6 @@ class Sonata extends Car{
 	public void stop() {
 		System.out.println("Sonata 멈춥니다");
 
-		
 	}
 
 	@Override
@@ -58,15 +64,18 @@ class Sonata extends Car{
 		System.out.println("Sonata 시동을 끕니다");
 		System.out.println();
 	}
-	
+	public void showInfo() {
+		System.out.println("소나타");
+	}
+
 }
 
-class Avante extends Car{
+class Avante extends Car {
 
 	@Override
 	public void start() {
 		System.out.println("Avante 시동을 켭니다");
-		
+
 	}
 
 	@Override
@@ -79,12 +88,11 @@ class Avante extends Car{
 	public void stop() {
 		System.out.println("Avante 멈춥니다");
 
-		
 	}
 
 	@Override
 	public void turnOff() {
 		System.out.println("Avante 시동을 끕니다");
-		
+
 	}
 }
